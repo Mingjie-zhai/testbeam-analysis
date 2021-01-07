@@ -12,9 +12,9 @@
 
 void SetHistoStyle(TH1F* histoSomething, Int_t color, Int_t markerStyle, Float_t markerSize, TString xAxisTitle, TString yAxisTitle);
 
-int FillHistograms()
+int FillHistograms(TString configName = "1")
 {
-    TString configName = "1";
+    
     TString cTreeNameInInputFile = "tree";
     TString cDataPath = "../../testbeamanalysis/Data";
     TString cHistoResultsPath = "ResultsHistos";
@@ -33,7 +33,7 @@ int FillHistograms()
     enum enumBining { kNBins, kMinBin, kMaxBin };
     const Float_t cHistogramsBins[cNumberOfFloatBranches][3] = {
       {1200,-100,300},//pulseHeightNoise
-      {1000,0,100},////pulseHeight
+      {1000,0,20},////pulseHeight
       {11000,0,220000},//timeCFD
       {11000,0,220000},//timeZCD
       {11000,0,220000},//timeCFD20

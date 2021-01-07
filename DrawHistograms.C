@@ -11,10 +11,10 @@
 // //needed macros
 void SetCanvasStyle(TCanvas* can);
 
-void DrawHistograms()
+int DrawHistograms(TString configName = "1")
 {
-    TString variableName = "charge";
-    TString configName = "1";
+    TString variableName = "pulseHeight";
+    
     TString cDataPath = "ResultsHistos";
   const Int_t cNumberOfChannels = 4;
   Int_t channelID = 2;
@@ -42,7 +42,7 @@ void DrawHistograms()
   pdfFileName.Form("%s/%s_%s.pdf",cPDFResultsPath.Data(),variableName.Data(),configName.Data());
   canMain->SaveAs(pdfFileName.Data());
   //-------------------------------------------------------------------------------------------------------------------------------------//
-
+  return 0;
 
 }
 
